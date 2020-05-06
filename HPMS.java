@@ -22,24 +22,28 @@ public class HPMS {
 		}
 		else return false;
 	}
+	//
 	public static void componentCaller(int componentCode,String[] args) {
 		if(componentCode==0) {
 			if(args[0].equals("--billing")){
 				Bill bill =new Bill();
-				System.out.println(bill.getBill());
+				System.out.println(bill.getUrlInfo());
 			}
 			else {
-				PatientPortal portal=new PatientPortal();
-				System.out.println(portal.getPatientPortal());
+				Portal portal=new Portal();
+				System.out.println(portal.getPortal());
 				
 			}
 		}
 		else {
 			if(args[0].equals("--customer-id")&&args[2].equals("--billing")||args[0].equals("--billing")&& args[1].equals("--customer-id")){
 				//billPatient
+				PatientBill pBill=new PatientBill(args);
+				
 			}
-			else if(args[0].equals("--customer-id")&&args[2].equals("--patient-portal")||) {
-				//customerportal
+			else if(args[0].equals("--customer-id")&&args[2].equals("--patient-portal")||args[0].equals("--patient-portal")&& args[1].equals("--customer-id")) {
+				PatientPortal pPortal=new PatientPortal();
+				
 			}
 			
 			
@@ -51,7 +55,7 @@ public class HPMS {
 			System.err.println("Invalid Argument/s provided");
 			System.exit(1);
 		}
-		componentCaller(componentCode);
+		componentCaller(componentCode,args);
 
 	}
 
