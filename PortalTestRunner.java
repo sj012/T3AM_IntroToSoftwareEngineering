@@ -1,6 +1,16 @@
 package de.vogella.junit.first;
 import org.junit.*;
 
+/**
+* This is the test runner file for Portal.java. It runs all tests in PortalTest.
+* <p>
+* This method does not return any values. It either prints errors to the 
+* System.error stream or that no errors were detected to the System.out stream.
+*
+* @param  Result result: A result variable used to run PortalTest.
+* @return Returns nothing.
+*/
+
 public class PortalTestRunner {
 	public static void main(String[] args) {
 		Result result = JUnitCore.runClasses(PortalTest.class);
