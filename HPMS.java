@@ -28,11 +28,12 @@ public class HPMS {
 		
 			if(args[0].equals("--billing")){
 				Bill bill =new Bill();
+				System.out.println(bill.getBill());
 				
 			}
 			else {
 				Portal portal=new Portal();
-				
+				System.out.println(portal.getPortal());
 				
 			}
 			
