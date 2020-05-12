@@ -4,23 +4,31 @@ import java.io.*;
 import java.lang.NullPointerException;
 
 /**
-* Returns the result of the HPMS Bill web service API call as a string. 
-* The url argument for the api call is provided within the code. 
+* Upon being called, Bill.java runs getUrlInfo, which is an API Call to the HPMS
+* Bill web service. It stores this value in the private String, bill, which can be
+* retrieved from the getBill method.
 * <p>
-* This method either returns the result of the API as a string or the error
-* code F1 in the case where there is a failure with the API Call.
+* This class runs the getUrlInfo method in the default constructor and sets it 
+* as the private String bill. The method getBill returns this string.
 *
 * @param  String urlString: The url for the HPMS Bill webservice API call.
-* @param  String results: the String that contains the result of the HPMS Bill 
+* @param  String results: the String that contains the result of the HPMS Bill, 
+* which is then pass to the private String bill.
+* @param  private String bill: The string that will keep the results of the String
+* results stored within the class.
 * web service API Call.
-* @return String results.
+* @return private String bill is returned when getBill is called.
 */
 
 public class Bill{
-    
-    public Bill(){}
-    
-    public String getUrlInfo(){
+    private String bill;
+    public Bill(){
+        bill = getUrlInfo();
+    }
+    public String getBill(){
+        return this.bill;
+    }
+    private String getUrlInfo(){
         
         String urlString="http://happy-pets-web-1522142859.us-east-1.elb.amazonaws.com/billing";
         
