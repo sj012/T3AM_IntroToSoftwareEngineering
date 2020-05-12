@@ -1,11 +1,11 @@
-import org.junit.Test;
-import org.junit.Ignore;
-//import static org.junit.Assert.*;
-import org.junit.Assert;
+//import org.junit.*;
 
 public class PatientBillTest {
    
-
+  
+   
+   // "patientBilling": [ { "date": "2019-01-01", "amount": 100.0, "customer_id": 100003, "service": "Annual Checkup", "patient_id": 99989 }, { "date": "2020-01-29", "amount": 105.0, "customer_id":
+  
    private PatientBill getPatientBill(){
       String CustomerID = "100003";
       return new PatientBill(CustomerID);
@@ -13,19 +13,14 @@ public class PatientBillTest {
    
    @Test
    public void patient_bill_retrieved() {
-      PatientBill patientbill = this.getPatientBill();
-      patientbill.setCustomerInfo();
-      System.out.println(patientbill.getPatientBill());
+     PatientBill patientBill = this.getPatientBill();
+		String result = patientBill.setCustomerInfo();
+    	Assert.assertNotEquals(result, "" );
       
    
       
       
    }
    
-   /*@Test(expected = IllegalArgumentException.class)
-   public void Customer_ID_not_found(){
-      PatientBill patientbill = this.getPatientBill();
-      patientbill.setCustomerInfo();
-      System.out.println(patientbill.getPatientBill());
-   }*/
+ 
 }
