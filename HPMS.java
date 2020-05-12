@@ -25,31 +25,31 @@ public class HPMS {
 	//
 	public static void componentCaller(int componentCode,String[] args) {
 		if(componentCode==0) {
+		
 			if(args[0].equals("--billing")){
 				Bill bill =new Bill();
-				System.out.println(bill.getUrlInfo());
+				
 			}
 			else {
 				Portal portal=new Portal();
-				System.out.println(portal.getPortal());
+				
 				
 			}
+			
 		}
 		else {
 			String id;
-			for(int i =0;i<args.length;i++){
-				if(args[i].equals("--customer--id")){
-					id=args++;
+			
+				if(args[0].equals("--customer--id")){
+					id=args[1];
 				}
-			}
+				else id=args[2];
+			
 			if(args[0].equals("--customer-id")&&args[2].equals("--billing")||args[0].equals("--billing")&& args[1].equals("--customer-id")){
 				//billPatient
-				
-					
-				}
 				PatientBill pBill=new PatientBill(id);
-				
 			}
+			
 			else if(args[0].equals("--customer-id")&&args[2].equals("--patient-portal")||args[0].equals("--patient-portal")&& args[1].equals("--customer-id")) {
 				PatientPortal pPortal=new PatientPortal(id);
 				
