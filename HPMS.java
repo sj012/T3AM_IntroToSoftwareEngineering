@@ -36,13 +36,22 @@ public class HPMS {
 			}
 		}
 		else {
+			String id;
+			for(int i =0;i<args.length;i++){
+				if(args[i].equals("--customer--id")){
+					id=args++;
+				}
+			}
 			if(args[0].equals("--customer-id")&&args[2].equals("--billing")||args[0].equals("--billing")&& args[1].equals("--customer-id")){
 				//billPatient
-				PatientBill pBill=new PatientBill(args);
+				
+					
+				}
+				PatientBill pBill=new PatientBill(id);
 				
 			}
 			else if(args[0].equals("--customer-id")&&args[2].equals("--patient-portal")||args[0].equals("--patient-portal")&& args[1].equals("--customer-id")) {
-				PatientPortal pPortal=new PatientPortal();
+				PatientPortal pPortal=new PatientPortal(id);
 				
 			}
 			
