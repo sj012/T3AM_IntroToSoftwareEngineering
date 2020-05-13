@@ -24,7 +24,7 @@ public class PatientBill{
   }
   //This returns the customer's information 
   public String getPatientBill(){
-      return pbill;
+      return pBill;
   }
   //This grabs the seperates all of the customer IDs
    public void setCustomerInfo(){
@@ -38,7 +38,7 @@ public class PatientBill{
          boolean customerIDfound = tempbill.contains(customerID);
          //says whether the ID is found
          if (customerIDfound == true){
-          pbill = billList.get(counter);
+          pBill = billList.get(counter);
           idfound = true;
           
          }
@@ -53,4 +53,3 @@ public class PatientBill{
 
             
 }
- 
