@@ -28,7 +28,7 @@ public class Bill{
     public String getBill(){
         return this.bill;
     }
-    private String getUrlInfo(){
+    public String getUrlInfo(){
         
         String urlString="http://happy-pets-web-1522142859.us-east-1.elb.amazonaws.com/billing";
         
